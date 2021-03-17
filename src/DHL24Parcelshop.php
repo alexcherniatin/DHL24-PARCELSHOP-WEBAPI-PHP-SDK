@@ -43,7 +43,6 @@ class DHL24Parcelshop
         $this->accountNumber = $accountNumber;
     }
 
-
     /**
      * Create shipment
      *
@@ -56,7 +55,9 @@ class DHL24Parcelshop
      * @return array
      */
     public function createShipment(array $shipment): array
-    {}
+    {
+        return [];
+    }
 
     /**
      * Get label
@@ -71,5 +72,7 @@ class DHL24Parcelshop
      * @return array
      */
     public function getLabel(array $itemsToPrint): array
-    {}
+    {
+        return [];
+    }
 }
