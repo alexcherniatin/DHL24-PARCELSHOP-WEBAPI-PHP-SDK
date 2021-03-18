@@ -138,7 +138,7 @@ class AddressStructure
             throw new InvalidStructureException('AddressStructure postal code required');
         }
 
-        $structure['postalCode'] = $this->postalCode;
+        $structure['postcode'] = $this->postalCode;
 
         if (\strlen($this->city) === 0) {
             throw new InvalidStructureException('AddressStructure city required');
