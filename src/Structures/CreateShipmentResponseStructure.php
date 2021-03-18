@@ -73,9 +73,9 @@ class CreateShipmentResponseStructure
      * Build structure from response
      *
      * @param object $response
-     * 
+     *
      * @throws InvalidStructureException
-     * 
+     *
      * @return array
      */
     public function fromResponse(object $response): array

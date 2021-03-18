@@ -27,7 +27,7 @@ class ShipmentInfoStructure
 
     /**
      * Shipping Service - Available only: LM
-     * 
+     *
      * required
      *
      * @var string
@@ -36,7 +36,7 @@ class ShipmentInfoStructure
 
     /**
      * Payment data
-     * 
+     *
      * required
      *
      * @var array
@@ -52,7 +52,7 @@ class ShipmentInfoStructure
 
     /**
      * Date of posting (YYYY-MM-DD)
-     * 
+     *
      * required
      *
      * @var string
@@ -61,7 +61,7 @@ class ShipmentInfoStructure
 
     /**
      * The beginning of the hourly range in which the courier is to pick up the parcel; in HH: MM format
-     * 
+     *
      * required
      *
      * @var string
@@ -70,7 +70,7 @@ class ShipmentInfoStructure
 
     /**
      * End of hour range in which the courier is to pick up the parcel in HH: MM format
-     * 
+     *
      * required
      *
      * @var string
@@ -79,7 +79,7 @@ class ShipmentInfoStructure
 
     /**
      * Return label type - available: BLP or ZBLP
-     * 
+     *
      * required
      *
      * @var string

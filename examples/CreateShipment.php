@@ -14,6 +14,7 @@ use Alexcherniatin\DHLParcelshop\Structures\ServiceStructure;
 use Alexcherniatin\DHLParcelshop\Structures\ShipmentInfoStructure;
 use Alexcherniatin\DHLParcelshop\Structures\ShipmentStructure;
 use Alexcherniatin\DHLParcelshop\Structures\ShipStructure;
+use Alexcherniatin\DHLParcelshop\Utils;
 
 $dhl = new DHL24Parcelshop(
     ExamplesConfig::LOGIN,
@@ -80,7 +81,7 @@ $receiver = (new FullAddressDataStructure())
 $ship = (new ShipStructure())
     ->setShipper($shipper)
     ->setReceiver($receiver)
-    ->setServicePointAccountNumber('1234567')
+    ->setServicePointAccountNumber('4500016')
     ->structure();
 
 $billing = (new BillingStructure())
@@ -94,10 +95,10 @@ $specialServices = [];
 //COD
 /*
 $specialServices[] = (new ServiceStructure())
-    ->setServiceType(ServiceStructure::SERVICE_TYPE_COD)
-    ->setServiceValue(150)
-    ->setCollectOnDeliveryForm(ServiceStructure::COD_FORM)
-    ->structure();
+->setServiceType(ServiceStructure::SERVICE_TYPE_COD)
+->setServiceValue(150)
+->setCollectOnDeliveryForm(ServiceStructure::COD_FORM)
+->structure();
  */
 
 //Insurance
@@ -137,13 +138,15 @@ $shipmentData = (new ShipmentStructure())
 
 echo '<pre>';
 
-print_r($pieceList);
-
 try {
 
     $result = $dhl->createShipment($shipmentData);
 
+    $savedLabelFileName = Utils::saveLabel($result['label'], 'labels/');
+
     print_r($result);
+
+    print_r($savedLabelFileName);
 
 } catch (\Throwable $th) {
     echo $th->getMessage();

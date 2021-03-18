@@ -8,37 +8,37 @@ class ShipStructure
 {
     /**
      * Sender's address structure
-     * 
+     *
      * required
      *
-     * @var array 
-    */
+     * @var array
+     */
     private $shipper = [];
 
     /**
      * Receiver's address structure
-     * 
+     *
      * required
      *
-     * @var array 
-    */
+     * @var array
+     */
     private $receiver = [];
 
     /**
      * SAP service point number required to get the address
-     * 
+     *
      * required
      *
-     * @var string 
-    */
+     * @var string
+     */
     private $servicePointAccountNumber = '';
 
     /**
      *
      * @param array $shipper
      *
-     * @return ShipStructure 
-    */
+     * @return ShipStructure
+     */
     public function setShipper(array $shipper): ShipStructure
     {
         $this->shipper = $shipper;
@@ -50,8 +50,8 @@ class ShipStructure
      *
      * @param array $receiver
      *
-     * @return ShipStructure 
-    */
+     * @return ShipStructure
+     */
     public function setReceiver(array $receiver): ShipStructure
     {
         $this->receiver = $receiver;
@@ -63,8 +63,8 @@ class ShipStructure
      *
      * @param string $servicePointAccountNumber
      *
-     * @return ShipStructure 
-    */
+     * @return ShipStructure
+     */
     public function setServicePointAccountNumber(string $servicePointAccountNumber): ShipStructure
     {
         $this->servicePointAccountNumber = $servicePointAccountNumber;
@@ -81,15 +81,15 @@ class ShipStructure
      */
     public function structure(): array
     {
-        if(\count($this->shipper) === 0){
+        if (\count($this->shipper) === 0) {
             throw new InvalidStructureException("ShipStructure shipper required");
         }
 
-        if(\count($this->receiver) === 0){
+        if (\count($this->receiver) === 0) {
             throw new InvalidStructureException("ShipStructure receiver required");
         }
 
-        if(\strlen($this->servicePointAccountNumber) === 0){
+        if (\strlen($this->servicePointAccountNumber) === 0) {
             throw new InvalidStructureException("ShipStructure servicePointAccountNumber required");
         }
 

@@ -98,7 +98,7 @@ class LabelStructure
         if (\strlen($this->labelType) === 0) {
             throw new InvalidStructureException('InvalidStructureException labelType required');
         }
-        
+
         if (\strlen($this->labelFormat) === 0) {
             throw new InvalidStructureException('InvalidStructureException labelFormat required');
         }
